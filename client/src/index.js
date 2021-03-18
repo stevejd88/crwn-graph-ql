@@ -8,10 +8,9 @@ import {
   ApolloLink,
   ApolloClient,
   createHttpLink,
-  gql
+  gql,
+  InMemoryCache
 } from '@apollo/client';
-import { InMemoryCache } from '@apollo/client/cache';
-
 import { store, persistor } from './redux/store';
 
 import './index.css';
