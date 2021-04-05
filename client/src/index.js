@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import {
   ApolloProvider,
-  ApolloLink,
   ApolloClient,
   createHttpLink,
   gql,
@@ -27,23 +26,23 @@ const client = new ApolloClient({
   cache
 });
 
-client
-  .query({
-    query: gql`
-      {
-        getCollectionsByTitle(title: "hats") {
-          id
-          title
-          items {
-            id
-            name
-            price
-          }
-        }
-      }
-    `
-  })
-  .then((res) => console.log(res));
+// client
+//   .query({
+//     query: gql`
+//       {
+//         getCollectionsByTitle(title: "hats") {
+//           id
+//           title
+//           items {
+//             id
+//             name
+//             price
+//           }
+//         }
+//       }
+//     `
+//   })
+//   .then((res) => console.log(res));
 
 ReactDOM.render(
   <ApolloProvider client={client}>
